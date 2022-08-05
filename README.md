@@ -1,4 +1,13 @@
-# DevOps-Projects
-This repository contains my DevOps projects
+# Complete CI/CD pipeline with EKS and AWS ECR
 
->Every branch of this repo contains each DevOps project.
+## Technologies:
+
+- kubernetes
+- Jenkins/Github Actions
+- AWS EKS
+- AWS ECR
+- Java
+- Maven
+- Linux
+- Docker
+- Git
