@@ -21,7 +21,7 @@ Complete CI/CD with Terraform and AWS
 <td>Terraform, Github Actions, Docker, AWS</td>
 <td>Deploying example app to aws ec2 using docker, github actions, terraform, AWS ECR</td>
 <td>
-<a href="">Checkout video</a>
+<a href="https://www.youtube.com/watch?v=5sZAx2ylsOo&t=520s">Checkout video</a>
 </td>
 </tr>
 </table>
