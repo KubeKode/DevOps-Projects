@@ -40,6 +40,19 @@ Complete CI/CD with Terraform and AWS
 <a href="https://www.youtube.com/watch?v=5sZAx2ylsOo&t=520s">Checkout video</a>
 </td>
 </tr>
+<tr>
+<td>2</td>
+<td>
+<a href="https://github.com/tush-tr/DevOps-Projects/tree/Deploy-nodeapp-to-GKE">
+Deploy application to GKE
+</a>
+</td>
+<td>Node.js, Docker, Kubernetes, GCR, GKE</td>
+<td>Deploying example app to GKE with load balancer service.</td>
+<td>
+<a href="https://www.youtube.com/watch?v=w9GjyDafguI&t=382s">Checkout video</a>
+</td>
+</tr>
 </table>
 
 <hr>
