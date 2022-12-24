@@ -1,8 +1,21 @@
+<img src="https://img.shields.io/github/forks/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/license/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/stars/tush-tr/DevOps-Projects"> <a href="https://twitter.com/tush_tr604" target="blank"><img src="https://img.shields.io/twitter/follow/tush_tr604?logo=twitter&style=flat" alt="tush_tr604" /></a>
+
 # DevOps-Projects
 
 <img src="1_AwvDJDfErlD34ox2QpwGoA.png" />
 
-This repository contains my DevOps projects
+This repository contains my DevOps projects.
+<p>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" height="36" width="36"/>
+<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/docker.gif" height="36" width="36" >
+<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/kubernetes.svg.png"  height="36" width="36" >
+<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/helm.gif"  height="36" width="36" />
+<img src="https://raw.githubusercontent.com/itsksaurabh/itsksaurabh/master/assets/terraform.gif" height="36" />
+<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/cicd.gif"  height="36" width="36" />
+<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/ghactions.png"  height="36" width="36" />
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/226px-Jenkins_logo.svg.png?20120629215426" height="36" />
+</p>
+
 
 >Every branch of this repo contains each DevOps project.
 
@@ -29,3 +42,14 @@ Complete CI/CD with Terraform and AWS
 </tr>
 </table>
 
+<hr>
+
+# Maintainer 😎
+
+[Tushar Rajpoot](https://tusharrajpoot.com)
+
+<a href="https://www.github.com/tush-tr" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" /></a> <a href="https://tusharrajpoot.hashnode.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/hashnode.svg" width="32" height="32" /></a> <a href="http://www.medium.com/@tush-tr" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/medium.svg" width="32" height="32" /></a> <a href="https://www.twitter.com/tush_tr604" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter.svg" width="32" height="32" /></a><a href="https://linkedin.com/in/tushar-r-849510116" target="_blank" rel="noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="32" height="32" /></a> <a href="https://www.youtube.com/c/UCSL_wYi9WB-uPz2_OzKb7bg" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/youtube.svg" width="32" height="32" /></a>
+
+## License
+
+[Apache License 2.0](LICENSE) © Tushar Rajpoot
