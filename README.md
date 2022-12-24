@@ -1,55 +1,108 @@
 <img src="https://img.shields.io/github/forks/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/license/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/stars/tush-tr/DevOps-Projects"> <a href="https://twitter.com/tush_tr604" target="blank"><img src="https://img.shields.io/twitter/follow/tush_tr604?logo=twitter&style=flat" alt="tush_tr604" /></a>
 
-# DevOps-Projects
+# Deploy an Application to GKE(Google Kubernetes Engine) 
+### Tech used:
+- Node.js
+- Docker
+- Kubernetes
+- GKE(Google Kubernetes Engine)
+- GCR(Google Container Registry)
 
-<img src="1_AwvDJDfErlD34ox2QpwGoA.png" />
-
-This repository contains my DevOps projects.
 <p>
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" height="36" width="36"/>
 <img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/docker.gif" height="36" width="36" >
-<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/kubernetes.svg.png"  height="36" width="36" >
-<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/helm.gif"  height="36" width="36" />
-<img src="https://raw.githubusercontent.com/itsksaurabh/itsksaurabh/master/assets/terraform.gif" height="36" />
-<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/cicd.gif"  height="36" width="36" />
-<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/ghactions.png"  height="36" width="36" />
- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/226px-Jenkins_logo.svg.png?20120629215426" height="36" />
+<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/kubernetes.svg.png"  height="36" width="36" ><img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/social-icon-google-cloud-1200-630.png" height="36" >
 </p>
 
-
->Every branch of this repo contains each DevOps project.
-
-<table>
-<tr>
-<th>No.</th>
-<th>Project</th>
-<th>Technologies Used</th>
-<th>Description</th>
-<th>Youtube Video</th>
-</tr>
-<tr>
-<td>1</td>
-<td>
-<a href="https://github.com/tush-tr/DevOps-Projects/tree/Complete-CI/CD-with-Terraform-AWS">
-Complete CI/CD with Terraform and AWS
-</a>
-</td>
-<td>Terraform, Github Actions, Docker, AWS</td>
-<td>Deploying example app to aws ec2 using docker, github actions, terraform, AWS ECR</td>
-<td>
-<a href="https://www.youtube.com/watch?v=5sZAx2ylsOo&t=520s">Checkout video</a>
-</td>
-</tr>
-</table>
-
-<hr>
-
-# Maintainer 😎
-
-[Tushar Rajpoot](https://tusharrajpoot.com)
-
-<a href="https://www.github.com/tush-tr" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" /></a> <a href="https://tusharrajpoot.hashnode.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/hashnode.svg" width="32" height="32" /></a> <a href="http://www.medium.com/@tush-tr" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/medium.svg" width="32" height="32" /></a> <a href="https://www.twitter.com/tush_tr604" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter.svg" width="32" height="32" /></a><a href="https://linkedin.com/in/tushar-r-849510116" target="_blank" rel="noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="32" height="32" /></a> <a href="https://www.youtube.com/c/UCSL_wYi9WB-uPz2_OzKb7bg" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/youtube.svg" width="32" height="32" /></a>
-
-## License
-
-[Apache License 2.0](LICENSE) © Tushar Rajpoot
+# Steps
+- [x] Create a kubernetes cluster on GKE.
+- [x] Setup Connection to created GKE cluster in with your local machine or cloud shell.
+    ```sh
+    gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE> --project <PROJECT_ID>
+    ```
+- [x] Create a simple nodejs/express application.
+- [x] Write Dockerfile for the application
+    ```Dockerfile
+    FROM --platform=linux/amd64 node:14
+    WORKDIR /usr/app
+    COPY package.json .
+    RUN npm install
+    COPY . .
+    EXPOSE 80
+    CMD ["node","app.js"]
+    ```
+- [x] Build the Docker image
+    ```sh
+    docker build -t us.gcr.io/<PROJECT_ID>/imagename:tag .
+    ```
+- [x] Authenticate to GCR
+    ```sh
+    gcloud auth configure-docker
+    ```
+- [x] Push docker image to GCR(Google Container Registry)
+    ```sh
+    docker push us.gcr.io/<PROJECT_ID>/imagename:tag
+    ```
+- [x] Test the application using docker.
+    ```sh
+    docker run -d -p 3000:80 us.gcr.io/<PROJECT_ID>/imagename:tag
+    ```
+- [x] Write kubernetes manifest file for deployment. ```deploy.yml```
+    ```yml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name:  nodeappdeployment
+      labels:
+        type: backend
+        app: nodeapp
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          type: backend
+          app: nodeapp
+      template:
+        metadata:
+          name: nodeapppod
+          labels:
+            type: backend
+            app: nodeapp
+        spec:
+          containers:
+            - name: nodecontainer
+              image: us.gcr.io/<PROJECT_ID>/imagename:tag
+              ports:
+                - containerPort: 80
+    ```
+- [x] Write kubernetes manifest file for service. ```service.yml```
+    ```yml
+    kind: Service
+    apiVersion: v1
+    metadata:
+      name: nodeapp-load-service
+    spec:
+      ports:
+        - port: 80 
+          targetPort: 80
+      selector:
+        type: backend
+        app: nodeapp  
+      type: LoadBalancer
+    ```
+- [x] Apply manifest file to create deployment.
+    ```sh
+    kubectl apply -f deploy.yml
+    ```
+- [x] Check status of the deployment.
+    ```sh
+    kubectl get deploy
+    ```
+- [x] Apply manifest file to create load balancer service.
+    ```sh
+    kubectl apply -f service.yml
+    ```
+- [x] Check status of service.
+    ```sh
+    kubectl get svc
+    ```
+- [x] Check the external IP of the service in the browser.
