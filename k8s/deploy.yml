@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeappdeployment
+  labels:
+    type: backend
+    app: nodeapp
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      type: backend
+      app: nodeapp
+  template:
+    metadata:
+      name: nodeapppod
+      labels:
+        type: backend
+        app: nodeapp
+    spec:
+      containers:
+        - name: nodeappcontainer
+          image: us.gcr.io/kinetic-road-371315/nodeapp:v2
+          ports:
+            - containerPort: 80

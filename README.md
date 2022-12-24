@@ -106,3 +106,11 @@
     kubectl get svc
     ```
 - [x] Check the external IP of the service in the browser.
+
+### Cleanup
+```sh
+kubectl delete -f deploy.yml
+kubectl delete -f service.yml
+```
+
+> Delete your GKE Cluster from GCP Console.
