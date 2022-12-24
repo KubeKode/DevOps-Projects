@@ -1,6 +1,7 @@
 # Complete CI/CD with Terraform and AWS
 
->Every branch of this repo contains each DevOps project.
+[![Watch Complete Tutorial](https://img.youtube.com/vi/5sZAx2ylsOo/0.jpg)](https://www.youtube.com/watch?v=5sZAx2ylsOo)
+
 
 ## Technologies:
 - Terraform
