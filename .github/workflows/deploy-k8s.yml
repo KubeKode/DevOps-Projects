@@ -24,7 +24,7 @@ jobs:
         with:
           token_format: 'access_token'
           workload_identity_provider: 'projects/886257991781/locations/global/workloadIdentityPools/k8s-pool/providers/k8s-provider'
-          service_account: 'tf-gke-test@$GCP_PROJECT_ID.iam.gserviceaccount.com'
+          service_account: tf-gke-test@$GCP_PROJECT_ID.iam.gserviceaccount.com
       - uses: 'google-github-actions/setup-gcloud@v1'
       - name: Docker auth
         run: gcloud auth configure-docker
