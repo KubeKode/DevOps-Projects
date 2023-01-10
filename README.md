@@ -53,6 +53,19 @@ Deploy application to GKE
 <a href="https://www.youtube.com/watch?v=w9GjyDafguI&t=382s">Checkout video</a>
 </td>
 </tr>
+<tr>
+<td>3</td>
+<td>
+<a href="https://github.com/tush-tr/DevOps-Projects/tree/Complete-CI/CD-with-Terraform-GKE">
+Complete CI/CD with Terraform and Kubernetes
+</a>
+</td>
+<td>Node.js, Docker, Kubernetes, GCR, GKE, Terraform, GitHub Actions</td>
+<td>Deploying example app to GKE with load balancer service with CI/CD and Terraform.</td>
+<td>
+<a href="https://www.youtube.com/watch?v=u59WdYrkiJI&t=139s">Checkout video</a>
+</td>
+</tr>
 </table>
 
 <hr>
