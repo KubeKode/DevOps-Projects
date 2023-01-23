@@ -66,6 +66,19 @@ Complete CI/CD with Terraform and Kubernetes
 <a href="https://www.youtube.com/watch?v=u59WdYrkiJI&t=139s">Checkout video</a>
 </td>
 </tr>
+<tr>
+<td>4</td>
+<td>
+<a href="https://github.com/tush-tr/DevOps-Projects/tree/Docker-compose-CI/CD-AWS-Beanstalk">
+Complete CI/CD with AWS Elastic Beanstalk
+</a>
+</td>
+<td>Reactjs, Docker, Docker compose, AWS Elastic Beanstalk, GitHub Actions</td>
+<td>Deploying React app to AWS Elastic Beanstalk CI/CD and Docker compose.</td>
+<td>
+<a href="https://www.youtube.com/watch?v=spA3jJYi6Q4">Checkout video</a>
+</td>
+</tr>
 </table>
 
 <hr>
