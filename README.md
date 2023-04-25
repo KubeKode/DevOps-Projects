@@ -30,7 +30,7 @@ This repository contains my DevOps projects.
 <tr>
 <td>1</td>
 <td>
-<a href="https://github.com/tush-tr/DevOps-Projects/tree/Complete-CI/CD-with-Terraform-AWS">
+<a href="https://github.com/kubekode/DevOps-Projects/tree/Complete-CI/CD-with-Terraform-AWS">
 Complete CI/CD with Terraform and AWS
 </a>
 </td>
@@ -43,7 +43,7 @@ Complete CI/CD with Terraform and AWS
 <tr>
 <td>2</td>
 <td>
-<a href="https://github.com/tush-tr/DevOps-Projects/tree/Deploy-nodeapp-to-GKE">
+<a href="https://github.com/kubekode/DevOps-Projects/tree/Deploy-nodeapp-to-GKE">
 Deploy application to GKE
 </a>
 </td>
@@ -56,7 +56,7 @@ Deploy application to GKE
 <tr>
 <td>3</td>
 <td>
-<a href="https://github.com/tush-tr/DevOps-Projects/tree/Complete-CI/CD-with-Terraform-GKE">
+<a href="https://github.com/kubekode/DevOps-Projects/tree/Complete-CI/CD-with-Terraform-GKE">
 Complete CI/CD with Terraform and Kubernetes
 </a>
 </td>
@@ -69,7 +69,7 @@ Complete CI/CD with Terraform and Kubernetes
 <tr>
 <td>4</td>
 <td>
-<a href="https://github.com/tush-tr/DevOps-Projects/tree/Docker-compose-CI/CD-AWS-Beanstalk">
+<a href="https://github.com/kubekode/DevOps-Projects/tree/Docker-compose-CI/CD-AWS-Beanstalk">
 Complete CI/CD with AWS Elastic Beanstalk
 </a>
 </td>
