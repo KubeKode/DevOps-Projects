@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/github/forks/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/license/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/stars/tush-tr/DevOps-Projects"> <a href="https://twitter.com/tush_tr604" target="blank">
+<img src="https://img.shields.io/github/forks/kubekode/DevOps-Projects"> <img src="https://img.shields.io/github/license/kubekode/DevOps-Projects"> <img src="https://img.shields.io/github/stars/kubekode/DevOps-Projects"> <a href="https://twitter.com/tush_tr604" target="blank">
 
 # DevOps-Projects
 
