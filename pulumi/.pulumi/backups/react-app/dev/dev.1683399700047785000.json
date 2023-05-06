@@ -1,0 +1,46 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/react-app/dev",
+        "latest": {
+            "manifest": {
+                "time": "2023-05-07T00:31:40.035632+05:30",
+                "magic": "973d6b3c240d147e1ef1ba406681becc939df85692d48ea02e3a54da48424358",
+                "version": "v3.66.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:64R55uGc1ns=:v1:uGD7aBQo3gxkNrMM:br7Px+oOkZ0LA+gE23ON/XX2F2ts2g=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::react-app::pulumi:pulumi:Stack::react-app-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "created": "2023-05-06T19:00:19.491472Z",
+                    "modified": "2023-05-06T19:00:19.491472Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::react-app::pulumi:providers:gcp::default_6_55_0",
+                    "custom": true,
+                    "id": "ac3fb15b-0664-4f30-85d8-4b0fe8fe0668",
+                    "type": "pulumi:providers:gcp",
+                    "inputs": {
+                        "project": "poetic-harmony-380816",
+                        "version": "6.55.0",
+                        "zone": "us-central1-c"
+                    },
+                    "outputs": {
+                        "project": "poetic-harmony-380816",
+                        "version": "6.55.0",
+                        "zone": "us-central1-c"
+                    },
+                    "created": "2023-05-06T19:01:36.881633Z",
+                    "modified": "2023-05-06T19:01:36.881633Z"
+                }
+            ]
+        }
+    }
+}

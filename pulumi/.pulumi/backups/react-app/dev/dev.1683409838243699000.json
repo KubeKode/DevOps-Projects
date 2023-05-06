@@ -1,0 +1,882 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/react-app/dev",
+        "latest": {
+            "manifest": {
+                "time": "2023-05-07T03:20:38.215652+05:30",
+                "magic": "973d6b3c240d147e1ef1ba406681becc939df85692d48ea02e3a54da48424358",
+                "version": "v3.66.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:64R55uGc1ns=:v1:uGD7aBQo3gxkNrMM:br7Px+oOkZ0LA+gE23ON/XX2F2ts2g=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::react-app::pulumi:pulumi:Stack::react-app-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "clusterIP": "35.225.138.12",
+                        "servicePublicIP": "130.211.213.49"
+                    },
+                    "created": "2023-05-06T21:28:49.369852Z",
+                    "modified": "2023-05-06T21:28:49.369852Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::react-app::pulumi:providers:gcp::default_6_55_0",
+                    "custom": true,
+                    "id": "670088b6-dd34-4e96-8cd1-7d4ea6effe63",
+                    "type": "pulumi:providers:gcp",
+                    "inputs": {
+                        "project": "poetic-harmony-380816",
+                        "version": "6.55.0",
+                        "zone": "us-central1-c"
+                    },
+                    "outputs": {
+                        "project": "poetic-harmony-380816",
+                        "version": "6.55.0",
+                        "zone": "us-central1-c"
+                    },
+                    "created": "2023-05-06T21:28:49.540202Z",
+                    "modified": "2023-05-06T21:28:49.540202Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::react-app::gcp:container/cluster:Cluster::my-first-cluster",
+                    "custom": true,
+                    "id": "projects/poetic-harmony-380816/locations/us-central1-c/clusters/my-first-cluster",
+                    "type": "gcp:container/cluster:Cluster",
+                    "inputs": {
+                        "__defaults": [
+                            "enableKubernetesAlpha",
+                            "enableL4IlbSubsetting",
+                            "enableLegacyAbac",
+                            "enableShieldedNodes",
+                            "network"
+                        ],
+                        "enableKubernetesAlpha": false,
+                        "enableL4IlbSubsetting": false,
+                        "enableLegacyAbac": false,
+                        "enableShieldedNodes": true,
+                        "initialNodeCount": 3,
+                        "location": "us-central1-c",
+                        "minMasterVersion": "latest",
+                        "name": "my-first-cluster",
+                        "network": "default",
+                        "nodeConfig": {
+                            "__defaults": [
+                                "loggingVariant",
+                                "preemptible",
+                                "spot"
+                            ],
+                            "diskSizeGb": 32,
+                            "loggingVariant": "DEFAULT",
+                            "machineType": "g1-small",
+                            "preemptible": false,
+                            "spot": false
+                        }
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":2400000000000,\"delete\":2400000000000,\"read\":2400000000000,\"update\":3600000000000},\"schema_version\":\"1\"}",
+                        "addonsConfig": {
+                            "cloudrunConfig": null,
+                            "configConnectorConfig": null,
+                            "dnsCacheConfig": null,
+                            "gcePersistentDiskCsiDriverConfig": {
+                                "enabled": true
+                            },
+                            "gcpFilestoreCsiDriverConfig": null,
+                            "gkeBackupAgentConfig": null,
+                            "horizontalPodAutoscaling": null,
+                            "httpLoadBalancing": null,
+                            "istioConfig": null,
+                            "kalmConfig": null,
+                            "networkPolicyConfig": {
+                                "disabled": true
+                            }
+                        },
+                        "authenticatorGroupsConfig": null,
+                        "binaryAuthorization": {
+                            "enabled": false,
+                            "evaluationMode": ""
+                        },
+                        "clusterAutoscaling": {
+                            "autoProvisioningDefaults": null,
+                            "autoscalingProfile": "BALANCED",
+                            "enabled": false,
+                            "resourceLimits": []
+                        },
+                        "clusterIpv4Cidr": "10.0.0.0/14",
+                        "clusterTelemetry": {
+                            "type": "ENABLED"
+                        },
+                        "confidentialNodes": null,
+                        "costManagementConfig": null,
+                        "databaseEncryption": {
+                            "keyName": "",
+                            "state": "DECRYPTED"
+                        },
+                        "datapathProvider": "",
+                        "defaultSnatStatus": {
+                            "disabled": false
+                        },
+                        "description": "",
+                        "dnsConfig": null,
+                        "enableAutopilot": false,
+                        "enableBinaryAuthorization": false,
+                        "enableIntranodeVisibility": false,
+                        "enableKubernetesAlpha": false,
+                        "enableL4IlbSubsetting": false,
+                        "enableLegacyAbac": false,
+                        "enableShieldedNodes": true,
+                        "enableTpu": false,
+                        "endpoint": "35.225.138.12",
+                        "gatewayApiConfig": null,
+                        "id": "projects/poetic-harmony-380816/locations/us-central1-c/clusters/my-first-cluster",
+                        "identityServiceConfig": null,
+                        "initialNodeCount": 3,
+                        "ipAllocationPolicy": null,
+                        "labelFingerprint": "a9dc16a7",
+                        "location": "us-central1-c",
+                        "loggingConfig": {
+                            "enableComponents": [
+                                "SYSTEM_COMPONENTS",
+                                "WORKLOADS"
+                            ]
+                        },
+                        "loggingService": "logging.googleapis.com/kubernetes",
+                        "maintenancePolicy": null,
+                        "masterAuth": {
+                            "clientCertificate": "",
+                            "clientCertificateConfig": {
+                                "issueClientCertificate": false
+                            },
+                            "clientKey": {
+                                "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                "ciphertext": "v1:FFfJUqFRMjYzRgor:EIuQWs1PNxbwDXRMBH/RvJMS"
+                            },
+                            "clusterCaCertificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMVENDQXBXZ0F3SUJBZ0lSQU1CWnFlL0ZHVm5QQlNheU0yREhJTVF3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa01qQm1ZelkwWlRFdE5UWTNOaTAwTmpRNUxXSm1ZVEl0WkdJNU0yUTNOR015T1RjegpNQ0FYRFRJek1EVXdOakl3TWpnMU0xb1lEekl3TlRNd05ESTRNakV5T0RVeldqQXZNUzB3S3dZRFZRUURFeVF5Ck1HWmpOalJsTVMwMU5qYzJMVFEyTkRrdFltWmhNaTFrWWprelpEYzBZekk1TnpNd2dnR2lNQTBHQ1NxR1NJYjMKRFFFQkFRVUFBNElCandBd2dnR0tBb0lCZ1FDUlZoRU1CL24xc3lZNjgxcHBXandCMlpURFgzMmd2VmsxSVRsMAphUnZoTy9xck16K25vN1I1K0k2ZU5VYVFXR1J4L1NxbSs4dThvWkVVdlV2azdvWWxsSTZUZ0FWM0ovbmpEWTJCCjdtejNGYUxCT2w2YWZPSi82ZEhtVFF1SWhvY3FzSGpjN2NvN3NIdkxsMVZndytXeWVaZVNUQXRUajNiWEVwV24KLzVyRzdpblVEMGU4bklkckF5SHZTT1V4R0wwU1RLejNyem5uVXh0UGpBUENld1VWaHgvZlQ2a2k1dVcza1NNTgp5U3JEYUwvb2xZZE1RMGhzdG4yWUxHS1FXRXhBeHN1eVNhR2NINEF3d09RcUR4NHhqZ3kzaGRiNS9rT1dCaVNqCk9VUFhENkJSTWxxT2NRQ3hoUGJkY1dZNjRsbHNvV2JUWWU0c3F3d2RyY1AxOTRYUGxNemdmSUN3QTY2KzNBbE0KZkxUTHQ1U0hQSDVjb1llU2p3Zy9QU2ppUU1IQ2JSOHpyK0pHeHFjazZMWmJQRUpoMVNLcGkwS0NOMjZxMWZ4UgpFYWduTG9yMDY0VnlPSTlGbzFJaktyYmlldjhZQ1JacmdiQ2MrSkZNU0RCRC9wWDY3Y1M4Z2JXbDlmL0NVTm9NCmNRaXgyb2c1bTlHUklqaFJzbnoxUEh3bkNkMENBd0VBQWFOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdJRU1BOEcKQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGUDM1clF6Vlp4a1ZEM1k0UUxMbldVV1RxcG5MTUEwRwpDU3FHU0liM0RRRUJDd1VBQTRJQmdRQmxLeFJSNTE1YW9zOTFXQlgyWERSWElMeVowZy90WG4wSjVJVzVkTkgwClNGMEZzMFMyUjdGK0hiWU82UVIrWmw1WC9WVHZndURVVHhoZzFCMUpoZjdHRmVBNnphNFhrRlMrWVpIQ3QvYVEKY0cwOGJZZmZYdDY0OU5aRmUzV2txM3VyZEZaWkNuclhDY1p6bklIUFE5SnJUNVB6ZGs4SFhvL3NuY1FzRG1LUQpad1JObm1jZ1hqMHVOWWFZWVJvUHhHOE94MWp4Vm5WVlN6TFhzZVdJelFDUnExYkhENC84SmRBSlY1K0xNeGJ2ClZ6NTVEV3owN1dtRlV5V3Bubzg3OFVMbm1oM3k5NFhJM3dUMlNkZ1Y2T0RnakJIU1BmTkRwK0FpL0h3c1FNTDAKd1lxZHRVeUE1cElMTHNyUUhOSGtXYlR1Rkg5MmtLa2Y5K2lCNG5JWkw2Y0JKK1lQZS92TFRYQUFJS2c0MGg0YwpWbFJGS2Z3NHh4ZnNXdFJqdG1qS2JxRlBCQWRuUGhJN0VzMkt2dnBoOVhvT1RMbWp3Y3AvUVg2TisxOEdhd2ZjCno0b2xiYWJFelptQURpUUtUSzhqS29CcFl2b2JsaFlKc01RR1RkSmtZTFJQZzhHdEI0bzZUcjBRWmx4ZTZndHkKaVYyVUxrNWw3b1R0K2d5TEErRVVmY2s9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                        },
+                        "masterAuthorizedNetworksConfig": null,
+                        "masterVersion": "1.26.3-gke.1000",
+                        "meshCertificates": null,
+                        "minMasterVersion": "latest",
+                        "monitoringConfig": {
+                            "enableComponents": [
+                                "SYSTEM_COMPONENTS"
+                            ],
+                            "managedPrometheus": null
+                        },
+                        "monitoringService": "monitoring.googleapis.com/kubernetes",
+                        "name": "my-first-cluster",
+                        "network": "projects/poetic-harmony-380816/global/networks/default",
+                        "networkPolicy": {
+                            "enabled": false,
+                            "provider": "PROVIDER_UNSPECIFIED"
+                        },
+                        "networkingMode": "ROUTES",
+                        "nodeConfig": {
+                            "advancedMachineFeatures": null,
+                            "bootDiskKmsKey": "",
+                            "diskSizeGb": 32,
+                            "diskType": "pd-balanced",
+                            "ephemeralStorageConfig": null,
+                            "ephemeralStorageLocalSsdConfig": null,
+                            "gcfsConfig": null,
+                            "guestAccelerators": [],
+                            "gvnic": null,
+                            "imageType": "COS_CONTAINERD",
+                            "kubeletConfig": null,
+                            "labels": {},
+                            "linuxNodeConfig": null,
+                            "localNvmeSsdBlockConfig": null,
+                            "localSsdCount": 0,
+                            "loggingVariant": "DEFAULT",
+                            "machineType": "g1-small",
+                            "metadata": {
+                                "disable-legacy-endpoints": "true"
+                            },
+                            "minCpuPlatform": "",
+                            "nodeGroup": "",
+                            "oauthScopes": [
+                                "https://www.googleapis.com/auth/monitoring",
+                                "https://www.googleapis.com/auth/devstorage.read_only",
+                                "https://www.googleapis.com/auth/logging.write",
+                                "https://www.googleapis.com/auth/service.management.readonly",
+                                "https://www.googleapis.com/auth/servicecontrol",
+                                "https://www.googleapis.com/auth/trace.append"
+                            ],
+                            "preemptible": false,
+                            "reservationAffinity": null,
+                            "resourceLabels": {},
+                            "sandboxConfig": null,
+                            "serviceAccount": "default",
+                            "shieldedInstanceConfig": {
+                                "enableIntegrityMonitoring": true,
+                                "enableSecureBoot": false
+                            },
+                            "spot": false,
+                            "tags": [],
+                            "taints": [],
+                            "workloadMetadataConfig": null
+                        },
+                        "nodeLocations": [],
+                        "nodePoolAutoConfig": null,
+                        "nodePoolDefaults": {
+                            "nodeConfigDefaults": {
+                                "gcfsConfig": null,
+                                "loggingVariant": "DEFAULT"
+                            }
+                        },
+                        "nodePools": [
+                            {
+                                "autoscaling": null,
+                                "initialNodeCount": 3,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/poetic-harmony-380816/zones/us-central1-c/instanceGroupManagers/gke-my-first-cluster-default-pool-ada7c0d6-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/poetic-harmony-380816/zones/us-central1-c/instanceGroups/gke-my-first-cluster-default-pool-ada7c0d6-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 0,
+                                "name": "default-pool",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podCidrOverprovisionConfig": null,
+                                    "podIpv4CidrBlock": "",
+                                    "podRange": ""
+                                },
+                                "nodeConfig": {
+                                    "advancedMachineFeatures": null,
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 32,
+                                    "diskType": "pd-balanced",
+                                    "ephemeralStorageConfig": null,
+                                    "ephemeralStorageLocalSsdConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localNvmeSsdBlockConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "g1-small",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": null,
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": false
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": null
+                                },
+                                "nodeCount": 3,
+                                "nodeLocations": [
+                                    "us-central1-c"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.26.3-gke.1000"
+                            }
+                        ],
+                        "nodeVersion": "1.26.3-gke.1000",
+                        "notificationConfig": {
+                            "pubsub": {
+                                "enabled": false,
+                                "filter": null,
+                                "topic": ""
+                            }
+                        },
+                        "podSecurityPolicyConfig": {
+                            "enabled": false
+                        },
+                        "privateClusterConfig": {
+                            "enablePrivateEndpoint": false,
+                            "enablePrivateNodes": false,
+                            "masterGlobalAccessConfig": {
+                                "enabled": false
+                            },
+                            "masterIpv4CidrBlock": "",
+                            "peeringName": "",
+                            "privateEndpoint": "10.128.0.38",
+                            "privateEndpointSubnetwork": "",
+                            "publicEndpoint": "35.225.138.12"
+                        },
+                        "privateIpv6GoogleAccess": "",
+                        "project": "poetic-harmony-380816",
+                        "protectConfig": {
+                            "workloadConfig": {
+                                "auditMode": "MODE_UNSPECIFIED"
+                            },
+                            "workloadVulnerabilityMode": "WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED"
+                        },
+                        "releaseChannel": {
+                            "channel": "UNSPECIFIED"
+                        },
+                        "resourceLabels": {},
+                        "resourceUsageExportConfig": null,
+                        "selfLink": "https://container.googleapis.com/v1beta1/projects/poetic-harmony-380816/zones/us-central1-c/clusters/my-first-cluster",
+                        "serviceExternalIpsConfig": {
+                            "enabled": false
+                        },
+                        "servicesIpv4Cidr": "10.3.240.0/20",
+                        "subnetwork": "projects/poetic-harmony-380816/regions/us-central1/subnetworks/default",
+                        "tpuIpv4CidrBlock": "",
+                        "verticalPodAutoscaling": null,
+                        "workloadIdentityConfig": null
+                    },
+                    "parent": "urn:pulumi:dev::react-app::pulumi:pulumi:Stack::react-app-dev",
+                    "provider": "urn:pulumi:dev::react-app::pulumi:providers:gcp::default_6_55_0::670088b6-dd34-4e96-8cd1-7d4ea6effe63",
+                    "propertyDependencies": {
+                        "initialNodeCount": null,
+                        "location": null,
+                        "minMasterVersion": null,
+                        "name": null,
+                        "nodeConfig": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::react-app::pulumi:providers:kubernetes::k8s-provider",
+                    "custom": true,
+                    "id": "5b35d688-ab4b-49b7-8aa8-16373cc880ee",
+                    "type": "pulumi:providers:kubernetes",
+                    "inputs": {
+                        "kubeconfig": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:qGnJXjhibQiiai0u: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"
+                        },
+                        "version": "3.26.0"
+                    },
+                    "outputs": {
+                        "kubeconfig": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:YitBGaQDeVqzkn7t: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"
+                        },
+                        "version": "3.26.0"
+                    },
+                    "parent": "urn:pulumi:dev::react-app::pulumi:pulumi:Stack::react-app-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::react-app::gcp:container/cluster:Cluster::my-first-cluster"
+                    ],
+                    "propertyDependencies": {
+                        "kubeconfig": [
+                            "urn:pulumi:dev::react-app::gcp:container/cluster:Cluster::my-first-cluster"
+                        ]
+                    },
+                    "created": "2023-05-06T21:46:01.16191Z",
+                    "modified": "2023-05-06T21:46:01.16191Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::react-app::kubernetes:apps/v1:Deployment::app-deployment",
+                    "custom": true,
+                    "id": "default/app-deployment",
+                    "type": "kubernetes:apps/v1:Deployment",
+                    "inputs": {
+                        "apiVersion": "apps/v1",
+                        "kind": "Deployment",
+                        "metadata": {
+                            "labels": {
+                                "app.kubernetes.io/managed-by": "pulumi"
+                            },
+                            "name": "app-deployment",
+                            "namespace": "default"
+                        },
+                        "spec": {
+                            "replicas": 1,
+                            "selector": {
+                                "matchLabels": {
+                                    "app": "react-todo-app"
+                                }
+                            },
+                            "template": {
+                                "metadata": {
+                                    "labels": {
+                                        "app": "react-todo-app"
+                                    }
+                                },
+                                "spec": {
+                                    "containers": [
+                                        {
+                                            "image": "us.gcr.io/poetic-harmony-380816/react-todo-list-app",
+                                            "name": "react-app-container",
+                                            "ports": [
+                                                {
+                                                    "containerPort": 80
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "outputs": {
+                        "__fieldManager": "pulumi-kubernetes",
+                        "__initialApiVersion": "apps/v1",
+                        "__inputs": {
+                            "apiVersion": "apps/v1",
+                            "kind": "Deployment",
+                            "metadata": {
+                                "labels": {
+                                    "app.kubernetes.io/managed-by": "pulumi"
+                                },
+                                "name": "app-deployment",
+                                "namespace": "default"
+                            },
+                            "spec": {
+                                "replicas": 1,
+                                "selector": {
+                                    "matchLabels": {
+                                        "app": "react-todo-app"
+                                    }
+                                },
+                                "template": {
+                                    "metadata": {
+                                        "labels": {
+                                            "app": "react-todo-app"
+                                        }
+                                    },
+                                    "spec": {
+                                        "containers": [
+                                            {
+                                                "image": "us.gcr.io/poetic-harmony-380816/react-todo-list-app",
+                                                "name": "react-app-container",
+                                                "ports": [
+                                                    {
+                                                        "containerPort": 80
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "apiVersion": "apps/v1",
+                        "kind": "Deployment",
+                        "metadata": {
+                            "annotations": {
+                                "deployment.kubernetes.io/revision": "1",
+                                "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"labels\":{\"app.kubernetes.io/managed-by\":\"pulumi\"},\"name\":\"app-deployment\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"react-todo-app\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"react-todo-app\"}},\"spec\":{\"containers\":[{\"image\":\"us.gcr.io/poetic-harmony-380816/react-todo-list-app\",\"name\":\"react-app-container\",\"ports\":[{\"containerPort\":80}]}]}}}}\n"
+                            },
+                            "creationTimestamp": "2023-05-06T21:46:06Z",
+                            "generation": 1,
+                            "labels": {
+                                "app.kubernetes.io/managed-by": "pulumi"
+                            },
+                            "managedFields": [
+                                {
+                                    "apiVersion": "apps/v1",
+                                    "fieldsType": "FieldsV1",
+                                    "fieldsV1": {
+                                        "f:metadata": {
+                                            "f:annotations": {
+                                                ".": {},
+                                                "f:kubectl.kubernetes.io/last-applied-configuration": {}
+                                            },
+                                            "f:labels": {
+                                                ".": {},
+                                                "f:app.kubernetes.io/managed-by": {}
+                                            }
+                                        },
+                                        "f:spec": {
+                                            "f:progressDeadlineSeconds": {},
+                                            "f:replicas": {},
+                                            "f:revisionHistoryLimit": {},
+                                            "f:selector": {},
+                                            "f:strategy": {
+                                                "f:rollingUpdate": {
+                                                    ".": {},
+                                                    "f:maxSurge": {},
+                                                    "f:maxUnavailable": {}
+                                                },
+                                                "f:type": {}
+                                            },
+                                            "f:template": {
+                                                "f:metadata": {
+                                                    "f:labels": {
+                                                        ".": {},
+                                                        "f:app": {}
+                                                    }
+                                                },
+                                                "f:spec": {
+                                                    "f:containers": {
+                                                        "k:{\"name\":\"react-app-container\"}": {
+                                                            ".": {},
+                                                            "f:image": {},
+                                                            "f:imagePullPolicy": {},
+                                                            "f:name": {},
+                                                            "f:ports": {
+                                                                ".": {},
+                                                                "k:{\"containerPort\":80,\"protocol\":\"TCP\"}": {
+                                                                    ".": {},
+                                                                    "f:containerPort": {},
+                                                                    "f:protocol": {}
+                                                                }
+                                                            },
+                                                            "f:resources": {},
+                                                            "f:terminationMessagePath": {},
+                                                            "f:terminationMessagePolicy": {}
+                                                        }
+                                                    },
+                                                    "f:dnsPolicy": {},
+                                                    "f:restartPolicy": {},
+                                                    "f:schedulerName": {},
+                                                    "f:securityContext": {},
+                                                    "f:terminationGracePeriodSeconds": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "manager": "pulumi-kubernetes",
+                                    "operation": "Update",
+                                    "time": "2023-05-06T21:46:06Z"
+                                },
+                                {
+                                    "apiVersion": "apps/v1",
+                                    "fieldsType": "FieldsV1",
+                                    "fieldsV1": {
+                                        "f:metadata": {
+                                            "f:annotations": {
+                                                "f:deployment.kubernetes.io/revision": {}
+                                            }
+                                        },
+                                        "f:status": {
+                                            "f:availableReplicas": {},
+                                            "f:conditions": {
+                                                ".": {},
+                                                "k:{\"type\":\"Available\"}": {
+                                                    ".": {},
+                                                    "f:lastTransitionTime": {},
+                                                    "f:lastUpdateTime": {},
+                                                    "f:message": {},
+                                                    "f:reason": {},
+                                                    "f:status": {},
+                                                    "f:type": {}
+                                                },
+                                                "k:{\"type\":\"Progressing\"}": {
+                                                    ".": {},
+                                                    "f:lastTransitionTime": {},
+                                                    "f:lastUpdateTime": {},
+                                                    "f:message": {},
+                                                    "f:reason": {},
+                                                    "f:status": {},
+                                                    "f:type": {}
+                                                }
+                                            },
+                                            "f:observedGeneration": {},
+                                            "f:readyReplicas": {},
+                                            "f:replicas": {},
+                                            "f:updatedReplicas": {}
+                                        }
+                                    },
+                                    "manager": "kube-controller-manager",
+                                    "operation": "Update",
+                                    "subresource": "status",
+                                    "time": "2023-05-06T21:46:13Z"
+                                }
+                            ],
+                            "name": "app-deployment",
+                            "namespace": "default",
+                            "resourceVersion": "8821",
+                            "uid": "821dbe15-5d99-4ac5-b13f-f29da117f893"
+                        },
+                        "spec": {
+                            "progressDeadlineSeconds": 600,
+                            "replicas": 1,
+                            "revisionHistoryLimit": 10,
+                            "selector": {
+                                "matchLabels": {
+                                    "app": "react-todo-app"
+                                }
+                            },
+                            "strategy": {
+                                "rollingUpdate": {
+                                    "maxSurge": "25%",
+                                    "maxUnavailable": "25%"
+                                },
+                                "type": "RollingUpdate"
+                            },
+                            "template": {
+                                "metadata": {
+                                    "labels": {
+                                        "app": "react-todo-app"
+                                    }
+                                },
+                                "spec": {
+                                    "containers": [
+                                        {
+                                            "image": "us.gcr.io/poetic-harmony-380816/react-todo-list-app",
+                                            "imagePullPolicy": "Always",
+                                            "name": "react-app-container",
+                                            "ports": [
+                                                {
+                                                    "containerPort": 80,
+                                                    "protocol": "TCP"
+                                                }
+                                            ],
+                                            "resources": {},
+                                            "terminationMessagePath": "/dev/termination-log",
+                                            "terminationMessagePolicy": "File"
+                                        }
+                                    ],
+                                    "dnsPolicy": "ClusterFirst",
+                                    "restartPolicy": "Always",
+                                    "schedulerName": "default-scheduler",
+                                    "securityContext": {},
+                                    "terminationGracePeriodSeconds": 30
+                                }
+                            }
+                        },
+                        "status": {
+                            "availableReplicas": 1,
+                            "conditions": [
+                                {
+                                    "lastTransitionTime": "2023-05-06T21:46:13Z",
+                                    "lastUpdateTime": "2023-05-06T21:46:13Z",
+                                    "message": "Deployment has minimum availability.",
+                                    "reason": "MinimumReplicasAvailable",
+                                    "status": "True",
+                                    "type": "Available"
+                                },
+                                {
+                                    "lastTransitionTime": "2023-05-06T21:46:06Z",
+                                    "lastUpdateTime": "2023-05-06T21:46:13Z",
+                                    "message": "ReplicaSet \"app-deployment-6b477cb756\" has successfully progressed.",
+                                    "reason": "NewReplicaSetAvailable",
+                                    "status": "True",
+                                    "type": "Progressing"
+                                }
+                            ],
+                            "observedGeneration": 1,
+                            "readyReplicas": 1,
+                            "replicas": 1,
+                            "updatedReplicas": 1
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::react-app::pulumi:pulumi:Stack::react-app-dev",
+                    "provider": "urn:pulumi:dev::react-app::pulumi:providers:kubernetes::k8s-provider::5b35d688-ab4b-49b7-8aa8-16373cc880ee",
+                    "propertyDependencies": {
+                        "apiVersion": null,
+                        "kind": null,
+                        "metadata": null,
+                        "spec": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::react-app::kubernetes:core/v1:Service::app-service",
+                    "custom": true,
+                    "id": "default/react-app-lb-service",
+                    "type": "kubernetes:core/v1:Service",
+                    "inputs": {
+                        "apiVersion": "v1",
+                        "kind": "Service",
+                        "metadata": {
+                            "labels": {
+                                "app.kubernetes.io/managed-by": "pulumi"
+                            },
+                            "name": "react-app-lb-service",
+                            "namespace": "default"
+                        },
+                        "spec": {
+                            "ports": [
+                                {
+                                    "port": 80,
+                                    "targetPort": 80
+                                }
+                            ],
+                            "selector": {
+                                "app": "react-todo-app"
+                            },
+                            "type": "LoadBalancer"
+                        }
+                    },
+                    "outputs": {
+                        "__fieldManager": "pulumi-kubernetes",
+                        "__initialApiVersion": "v1",
+                        "__inputs": {
+                            "apiVersion": "v1",
+                            "kind": "Service",
+                            "metadata": {
+                                "labels": {
+                                    "app.kubernetes.io/managed-by": "pulumi"
+                                },
+                                "name": "react-app-lb-service",
+                                "namespace": "default"
+                            },
+                            "spec": {
+                                "ports": [
+                                    {
+                                        "port": 80,
+                                        "targetPort": 80
+                                    }
+                                ],
+                                "selector": {
+                                    "app": "react-todo-app"
+                                },
+                                "type": "LoadBalancer"
+                            }
+                        },
+                        "apiVersion": "v1",
+                        "kind": "Service",
+                        "metadata": {
+                            "annotations": {
+                                "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"labels\":{\"app.kubernetes.io/managed-by\":\"pulumi\"},\"name\":\"react-app-lb-service\",\"namespace\":\"default\"},\"spec\":{\"ports\":[{\"port\":80,\"targetPort\":80}],\"selector\":{\"app\":\"react-todo-app\"},\"type\":\"LoadBalancer\"}}\n"
+                            },
+                            "creationTimestamp": "2023-05-06T21:50:02Z",
+                            "finalizers": [
+                                "service.kubernetes.io/load-balancer-cleanup"
+                            ],
+                            "labels": {
+                                "app.kubernetes.io/managed-by": "pulumi"
+                            },
+                            "managedFields": [
+                                {
+                                    "apiVersion": "v1",
+                                    "fieldsType": "FieldsV1",
+                                    "fieldsV1": {
+                                        "f:metadata": {
+                                            "f:annotations": {
+                                                ".": {},
+                                                "f:kubectl.kubernetes.io/last-applied-configuration": {}
+                                            },
+                                            "f:labels": {
+                                                ".": {},
+                                                "f:app.kubernetes.io/managed-by": {}
+                                            }
+                                        },
+                                        "f:spec": {
+                                            "f:allocateLoadBalancerNodePorts": {},
+                                            "f:externalTrafficPolicy": {},
+                                            "f:internalTrafficPolicy": {},
+                                            "f:ports": {
+                                                ".": {},
+                                                "k:{\"port\":80,\"protocol\":\"TCP\"}": {
+                                                    ".": {},
+                                                    "f:port": {},
+                                                    "f:protocol": {},
+                                                    "f:targetPort": {}
+                                                }
+                                            },
+                                            "f:selector": {},
+                                            "f:sessionAffinity": {},
+                                            "f:type": {}
+                                        }
+                                    },
+                                    "manager": "pulumi-kubernetes",
+                                    "operation": "Update",
+                                    "time": "2023-05-06T21:50:02Z"
+                                },
+                                {
+                                    "apiVersion": "v1",
+                                    "fieldsType": "FieldsV1",
+                                    "fieldsV1": {
+                                        "f:metadata": {
+                                            "f:finalizers": {
+                                                ".": {},
+                                                "v:\"service.kubernetes.io/load-balancer-cleanup\"": {}
+                                            }
+                                        },
+                                        "f:status": {
+                                            "f:loadBalancer": {
+                                                "f:ingress": {}
+                                            }
+                                        }
+                                    },
+                                    "manager": "kube-controller-manager",
+                                    "operation": "Update",
+                                    "subresource": "status",
+                                    "time": "2023-05-06T21:50:37Z"
+                                }
+                            ],
+                            "name": "react-app-lb-service",
+                            "namespace": "default",
+                            "resourceVersion": "11150",
+                            "uid": "2096f46c-06e1-45b7-a342-31359ab6d20b"
+                        },
+                        "spec": {
+                            "allocateLoadBalancerNodePorts": true,
+                            "clusterIP": "10.3.241.192",
+                            "clusterIPs": [
+                                "10.3.241.192"
+                            ],
+                            "externalTrafficPolicy": "Cluster",
+                            "internalTrafficPolicy": "Cluster",
+                            "ipFamilies": [
+                                "IPv4"
+                            ],
+                            "ipFamilyPolicy": "SingleStack",
+                            "ports": [
+                                {
+                                    "nodePort": 32744,
+                                    "port": 80,
+                                    "protocol": "TCP",
+                                    "targetPort": 80
+                                }
+                            ],
+                            "selector": {
+                                "app": "react-todo-app"
+                            },
+                            "sessionAffinity": "None",
+                            "type": "LoadBalancer"
+                        },
+                        "status": {
+                            "loadBalancer": {
+                                "ingress": [
+                                    {
+                                        "ip": "130.211.213.49"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::react-app::pulumi:pulumi:Stack::react-app-dev",
+                    "provider": "urn:pulumi:dev::react-app::pulumi:providers:kubernetes::k8s-provider::5b35d688-ab4b-49b7-8aa8-16373cc880ee",
+                    "propertyDependencies": {
+                        "apiVersion": null,
+                        "kind": null,
+                        "metadata": null,
+                        "spec": null
+                    },
+                    "created": "2023-05-06T21:50:38.20084Z",
+                    "modified": "2023-05-06T21:50:38.20084Z"
+                }
+            ]
+        }
+    }
+}

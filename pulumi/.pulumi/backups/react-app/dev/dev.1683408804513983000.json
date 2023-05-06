@@ -1,0 +1,372 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/react-app/dev",
+        "latest": {
+            "manifest": {
+                "time": "2023-05-07T03:03:24.404324+05:30",
+                "magic": "973d6b3c240d147e1ef1ba406681becc939df85692d48ea02e3a54da48424358",
+                "version": "v3.66.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:64R55uGc1ns=:v1:uGD7aBQo3gxkNrMM:br7Px+oOkZ0LA+gE23ON/XX2F2ts2g=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::react-app::pulumi:pulumi:Stack::react-app-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "created": "2023-05-06T21:28:49.369852Z",
+                    "modified": "2023-05-06T21:28:49.369852Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::react-app::pulumi:providers:gcp::default_6_55_0",
+                    "custom": true,
+                    "id": "670088b6-dd34-4e96-8cd1-7d4ea6effe63",
+                    "type": "pulumi:providers:gcp",
+                    "inputs": {
+                        "project": "poetic-harmony-380816",
+                        "version": "6.55.0",
+                        "zone": "us-central1-c"
+                    },
+                    "outputs": {
+                        "project": "poetic-harmony-380816",
+                        "version": "6.55.0",
+                        "zone": "us-central1-c"
+                    },
+                    "created": "2023-05-06T21:28:49.540202Z",
+                    "modified": "2023-05-06T21:28:49.540202Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::react-app::gcp:container/cluster:Cluster::my-first-cluster",
+                    "custom": true,
+                    "id": "projects/poetic-harmony-380816/locations/us-central1-c/clusters/my-first-cluster",
+                    "type": "gcp:container/cluster:Cluster",
+                    "inputs": {
+                        "__defaults": [
+                            "enableKubernetesAlpha",
+                            "enableL4IlbSubsetting",
+                            "enableLegacyAbac",
+                            "enableShieldedNodes",
+                            "network"
+                        ],
+                        "enableKubernetesAlpha": false,
+                        "enableL4IlbSubsetting": false,
+                        "enableLegacyAbac": false,
+                        "enableShieldedNodes": true,
+                        "initialNodeCount": 3,
+                        "location": "us-central1-c",
+                        "minMasterVersion": "latest",
+                        "name": "my-first-cluster",
+                        "network": "default",
+                        "nodeConfig": {
+                            "__defaults": [
+                                "loggingVariant",
+                                "preemptible",
+                                "spot"
+                            ],
+                            "diskSizeGb": 32,
+                            "loggingVariant": "DEFAULT",
+                            "machineType": "g1-small",
+                            "preemptible": false,
+                            "spot": false
+                        }
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":2400000000000,\"delete\":2400000000000,\"read\":2400000000000,\"update\":3600000000000},\"schema_version\":\"1\"}",
+                        "addonsConfig": {
+                            "cloudrunConfig": null,
+                            "configConnectorConfig": null,
+                            "dnsCacheConfig": null,
+                            "gcePersistentDiskCsiDriverConfig": {
+                                "enabled": true
+                            },
+                            "gcpFilestoreCsiDriverConfig": null,
+                            "gkeBackupAgentConfig": null,
+                            "horizontalPodAutoscaling": null,
+                            "httpLoadBalancing": null,
+                            "istioConfig": null,
+                            "kalmConfig": null,
+                            "networkPolicyConfig": {
+                                "disabled": true
+                            }
+                        },
+                        "authenticatorGroupsConfig": null,
+                        "binaryAuthorization": {
+                            "enabled": false,
+                            "evaluationMode": ""
+                        },
+                        "clusterAutoscaling": {
+                            "autoProvisioningDefaults": null,
+                            "autoscalingProfile": "BALANCED",
+                            "enabled": false,
+                            "resourceLimits": []
+                        },
+                        "clusterIpv4Cidr": "10.0.0.0/14",
+                        "clusterTelemetry": {
+                            "type": "ENABLED"
+                        },
+                        "confidentialNodes": null,
+                        "costManagementConfig": null,
+                        "databaseEncryption": {
+                            "keyName": "",
+                            "state": "DECRYPTED"
+                        },
+                        "datapathProvider": "",
+                        "defaultSnatStatus": {
+                            "disabled": false
+                        },
+                        "description": "",
+                        "dnsConfig": null,
+                        "enableAutopilot": false,
+                        "enableBinaryAuthorization": false,
+                        "enableIntranodeVisibility": false,
+                        "enableKubernetesAlpha": false,
+                        "enableL4IlbSubsetting": false,
+                        "enableLegacyAbac": false,
+                        "enableShieldedNodes": true,
+                        "enableTpu": false,
+                        "endpoint": "35.225.138.12",
+                        "gatewayApiConfig": null,
+                        "id": "projects/poetic-harmony-380816/locations/us-central1-c/clusters/my-first-cluster",
+                        "identityServiceConfig": null,
+                        "initialNodeCount": 3,
+                        "ipAllocationPolicy": null,
+                        "labelFingerprint": "a9dc16a7",
+                        "location": "us-central1-c",
+                        "loggingConfig": {
+                            "enableComponents": [
+                                "SYSTEM_COMPONENTS",
+                                "WORKLOADS"
+                            ]
+                        },
+                        "loggingService": "logging.googleapis.com/kubernetes",
+                        "maintenancePolicy": null,
+                        "masterAuth": {
+                            "clientCertificate": "",
+                            "clientCertificateConfig": {
+                                "issueClientCertificate": false
+                            },
+                            "clientKey": {
+                                "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                "ciphertext": "v1:yHAg9uMnCBEGk5fC:qzu836qWy16P9VrBmmBq9rD9"
+                            },
+                            "clusterCaCertificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMVENDQXBXZ0F3SUJBZ0lSQU1CWnFlL0ZHVm5QQlNheU0yREhJTVF3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa01qQm1ZelkwWlRFdE5UWTNOaTAwTmpRNUxXSm1ZVEl0WkdJNU0yUTNOR015T1RjegpNQ0FYRFRJek1EVXdOakl3TWpnMU0xb1lEekl3TlRNd05ESTRNakV5T0RVeldqQXZNUzB3S3dZRFZRUURFeVF5Ck1HWmpOalJsTVMwMU5qYzJMVFEyTkRrdFltWmhNaTFrWWprelpEYzBZekk1TnpNd2dnR2lNQTBHQ1NxR1NJYjMKRFFFQkFRVUFBNElCandBd2dnR0tBb0lCZ1FDUlZoRU1CL24xc3lZNjgxcHBXandCMlpURFgzMmd2VmsxSVRsMAphUnZoTy9xck16K25vN1I1K0k2ZU5VYVFXR1J4L1NxbSs4dThvWkVVdlV2azdvWWxsSTZUZ0FWM0ovbmpEWTJCCjdtejNGYUxCT2w2YWZPSi82ZEhtVFF1SWhvY3FzSGpjN2NvN3NIdkxsMVZndytXeWVaZVNUQXRUajNiWEVwV24KLzVyRzdpblVEMGU4bklkckF5SHZTT1V4R0wwU1RLejNyem5uVXh0UGpBUENld1VWaHgvZlQ2a2k1dVcza1NNTgp5U3JEYUwvb2xZZE1RMGhzdG4yWUxHS1FXRXhBeHN1eVNhR2NINEF3d09RcUR4NHhqZ3kzaGRiNS9rT1dCaVNqCk9VUFhENkJSTWxxT2NRQ3hoUGJkY1dZNjRsbHNvV2JUWWU0c3F3d2RyY1AxOTRYUGxNemdmSUN3QTY2KzNBbE0KZkxUTHQ1U0hQSDVjb1llU2p3Zy9QU2ppUU1IQ2JSOHpyK0pHeHFjazZMWmJQRUpoMVNLcGkwS0NOMjZxMWZ4UgpFYWduTG9yMDY0VnlPSTlGbzFJaktyYmlldjhZQ1JacmdiQ2MrSkZNU0RCRC9wWDY3Y1M4Z2JXbDlmL0NVTm9NCmNRaXgyb2c1bTlHUklqaFJzbnoxUEh3bkNkMENBd0VBQWFOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdJRU1BOEcKQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGUDM1clF6Vlp4a1ZEM1k0UUxMbldVV1RxcG5MTUEwRwpDU3FHU0liM0RRRUJDd1VBQTRJQmdRQmxLeFJSNTE1YW9zOTFXQlgyWERSWElMeVowZy90WG4wSjVJVzVkTkgwClNGMEZzMFMyUjdGK0hiWU82UVIrWmw1WC9WVHZndURVVHhoZzFCMUpoZjdHRmVBNnphNFhrRlMrWVpIQ3QvYVEKY0cwOGJZZmZYdDY0OU5aRmUzV2txM3VyZEZaWkNuclhDY1p6bklIUFE5SnJUNVB6ZGs4SFhvL3NuY1FzRG1LUQpad1JObm1jZ1hqMHVOWWFZWVJvUHhHOE94MWp4Vm5WVlN6TFhzZVdJelFDUnExYkhENC84SmRBSlY1K0xNeGJ2ClZ6NTVEV3owN1dtRlV5V3Bubzg3OFVMbm1oM3k5NFhJM3dUMlNkZ1Y2T0RnakJIU1BmTkRwK0FpL0h3c1FNTDAKd1lxZHRVeUE1cElMTHNyUUhOSGtXYlR1Rkg5MmtLa2Y5K2lCNG5JWkw2Y0JKK1lQZS92TFRYQUFJS2c0MGg0YwpWbFJGS2Z3NHh4ZnNXdFJqdG1qS2JxRlBCQWRuUGhJN0VzMkt2dnBoOVhvT1RMbWp3Y3AvUVg2TisxOEdhd2ZjCno0b2xiYWJFelptQURpUUtUSzhqS29CcFl2b2JsaFlKc01RR1RkSmtZTFJQZzhHdEI0bzZUcjBRWmx4ZTZndHkKaVYyVUxrNWw3b1R0K2d5TEErRVVmY2s9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                        },
+                        "masterAuthorizedNetworksConfig": null,
+                        "masterVersion": "1.26.3-gke.1000",
+                        "meshCertificates": null,
+                        "minMasterVersion": "latest",
+                        "monitoringConfig": {
+                            "enableComponents": [
+                                "SYSTEM_COMPONENTS"
+                            ],
+                            "managedPrometheus": null
+                        },
+                        "monitoringService": "monitoring.googleapis.com/kubernetes",
+                        "name": "my-first-cluster",
+                        "network": "projects/poetic-harmony-380816/global/networks/default",
+                        "networkPolicy": {
+                            "enabled": false,
+                            "provider": "PROVIDER_UNSPECIFIED"
+                        },
+                        "networkingMode": "ROUTES",
+                        "nodeConfig": {
+                            "advancedMachineFeatures": null,
+                            "bootDiskKmsKey": "",
+                            "diskSizeGb": 32,
+                            "diskType": "pd-balanced",
+                            "ephemeralStorageConfig": null,
+                            "ephemeralStorageLocalSsdConfig": null,
+                            "gcfsConfig": null,
+                            "guestAccelerators": [],
+                            "gvnic": null,
+                            "imageType": "COS_CONTAINERD",
+                            "kubeletConfig": null,
+                            "labels": {},
+                            "linuxNodeConfig": null,
+                            "localNvmeSsdBlockConfig": null,
+                            "localSsdCount": 0,
+                            "loggingVariant": "DEFAULT",
+                            "machineType": "g1-small",
+                            "metadata": {
+                                "disable-legacy-endpoints": "true"
+                            },
+                            "minCpuPlatform": "",
+                            "nodeGroup": "",
+                            "oauthScopes": [
+                                "https://www.googleapis.com/auth/monitoring",
+                                "https://www.googleapis.com/auth/devstorage.read_only",
+                                "https://www.googleapis.com/auth/logging.write",
+                                "https://www.googleapis.com/auth/service.management.readonly",
+                                "https://www.googleapis.com/auth/servicecontrol",
+                                "https://www.googleapis.com/auth/trace.append"
+                            ],
+                            "preemptible": false,
+                            "reservationAffinity": null,
+                            "resourceLabels": {},
+                            "sandboxConfig": null,
+                            "serviceAccount": "default",
+                            "shieldedInstanceConfig": {
+                                "enableIntegrityMonitoring": true,
+                                "enableSecureBoot": false
+                            },
+                            "spot": false,
+                            "tags": [],
+                            "taints": [],
+                            "workloadMetadataConfig": null
+                        },
+                        "nodeLocations": [],
+                        "nodePoolAutoConfig": null,
+                        "nodePoolDefaults": {
+                            "nodeConfigDefaults": {
+                                "gcfsConfig": null,
+                                "loggingVariant": "DEFAULT"
+                            }
+                        },
+                        "nodePools": [
+                            {
+                                "autoscaling": null,
+                                "initialNodeCount": 3,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/poetic-harmony-380816/zones/us-central1-c/instanceGroupManagers/gke-my-first-cluster-default-pool-ada7c0d6-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/poetic-harmony-380816/zones/us-central1-c/instanceGroups/gke-my-first-cluster-default-pool-ada7c0d6-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 0,
+                                "name": "default-pool",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podCidrOverprovisionConfig": null,
+                                    "podIpv4CidrBlock": "",
+                                    "podRange": ""
+                                },
+                                "nodeConfig": {
+                                    "advancedMachineFeatures": null,
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 32,
+                                    "diskType": "pd-balanced",
+                                    "ephemeralStorageConfig": null,
+                                    "ephemeralStorageLocalSsdConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localNvmeSsdBlockConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "g1-small",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": null,
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": false
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": null
+                                },
+                                "nodeCount": 3,
+                                "nodeLocations": [
+                                    "us-central1-c"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.26.3-gke.1000"
+                            }
+                        ],
+                        "nodeVersion": "1.26.3-gke.1000",
+                        "notificationConfig": {
+                            "pubsub": {
+                                "enabled": false,
+                                "filter": null,
+                                "topic": ""
+                            }
+                        },
+                        "podSecurityPolicyConfig": {
+                            "enabled": false
+                        },
+                        "privateClusterConfig": {
+                            "enablePrivateEndpoint": false,
+                            "enablePrivateNodes": false,
+                            "masterGlobalAccessConfig": {
+                                "enabled": false
+                            },
+                            "masterIpv4CidrBlock": "",
+                            "peeringName": "",
+                            "privateEndpoint": "10.128.0.38",
+                            "privateEndpointSubnetwork": "",
+                            "publicEndpoint": "35.225.138.12"
+                        },
+                        "privateIpv6GoogleAccess": "",
+                        "project": "poetic-harmony-380816",
+                        "protectConfig": {
+                            "workloadConfig": {
+                                "auditMode": "MODE_UNSPECIFIED"
+                            },
+                            "workloadVulnerabilityMode": "WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED"
+                        },
+                        "releaseChannel": {
+                            "channel": "UNSPECIFIED"
+                        },
+                        "resourceLabels": {},
+                        "resourceUsageExportConfig": null,
+                        "selfLink": "https://container.googleapis.com/v1beta1/projects/poetic-harmony-380816/zones/us-central1-c/clusters/my-first-cluster",
+                        "serviceExternalIpsConfig": {
+                            "enabled": false
+                        },
+                        "servicesIpv4Cidr": "10.3.240.0/20",
+                        "subnetwork": "projects/poetic-harmony-380816/regions/us-central1/subnetworks/default",
+                        "tpuIpv4CidrBlock": "",
+                        "verticalPodAutoscaling": null,
+                        "workloadIdentityConfig": null
+                    },
+                    "parent": "urn:pulumi:dev::react-app::pulumi:pulumi:Stack::react-app-dev",
+                    "provider": "urn:pulumi:dev::react-app::pulumi:providers:gcp::default_6_55_0::670088b6-dd34-4e96-8cd1-7d4ea6effe63",
+                    "propertyDependencies": {
+                        "initialNodeCount": null,
+                        "location": null,
+                        "minMasterVersion": null,
+                        "name": null,
+                        "nodeConfig": null
+                    }
+                }
+            ]
+        }
+    }
+}

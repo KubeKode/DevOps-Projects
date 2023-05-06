@@ -1,0 +1,29 @@
+.tasklist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: aliceblue;
+  box-shadow: inset 0px 0px 6px 0px;
+  margin: 5px;
+  width: 40%;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+.list-item:hover {
+  box-shadow: 0px 1px 5px 4px;
+  width: 42%;
+}
+.list-item .item {
+  margin: 0 10px;
+}
+.list-item button {
+  margin-left: auto;
+  transition: color 1s;
+}

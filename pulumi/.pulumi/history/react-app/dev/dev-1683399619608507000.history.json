@@ -1,0 +1,32 @@
+{
+    "kind": "update",
+    "startTime": 1683399619,
+    "message": "Update README.md",
+    "environment": {
+        "exec.kind": "cli",
+        "git.author": "Tushar Rajpoot",
+        "git.author.email": "tusharrajput604@gmail.com",
+        "git.committer": "GitHub",
+        "git.committer.email": "noreply@github.com",
+        "git.dirty": "true",
+        "git.head": "e376e8a7f297b05235ff75783aef556f39b370ab",
+        "git.headName": "refs/heads/React-GKE-pulumi",
+        "pulumi.arch": "arm64",
+        "pulumi.os": "darwin",
+        "pulumi.version": "v3.66.0",
+        "updatePlan": "false",
+        "vcs.kind": "github.com",
+        "vcs.owner": "KubeKode",
+        "vcs.repo": "DevOps-Projects"
+    },
+    "config": {
+        "gcp:location": "us-central1-c",
+        "gcp:project": "poetic-harmony-380816"
+    },
+    "version": 0,
+    "result": "succeeded",
+    "endTime": 1683399619,
+    "resourceChanges": {
+        "create": 1
+    }
+}

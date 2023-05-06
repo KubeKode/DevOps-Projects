@@ -1,0 +1,9 @@
+{
+    "name": "react-gke",
+    "main": "index.js",
+    "dependencies": {
+        "@pulumi/gcp": "^6.0.0",
+        "@pulumi/kubernetes": "^3.26.0",
+        "@pulumi/pulumi": "^3.0.0"
+    }
+}

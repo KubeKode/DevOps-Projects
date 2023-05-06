@@ -1,94 +1,162 @@
-<img src="https://img.shields.io/github/forks/kubekode/DevOps-Projects"> <img src="https://img.shields.io/github/license/kubekode/DevOps-Projects"> <img src="https://img.shields.io/github/stars/kubekode/DevOps-Projects"> <a href="https://twitter.com/tush_tr604" target="blank">
+# Deploy React application to GKE
 
-# DevOps-Projects
+- Directory structure
+  ```mermaid
+  flowchart TD;
+  A[root dir]-->B[Todo List app]
+  A-->C[Pulumi code]
 
-<img src="1_AwvDJDfErlD34ox2QpwGoA.png" />
+- React app (Todo List app)
+  ```mermaid
+  flowchart TD;
+  A[React App]-->B[React app files]
+  A-->C[Dockerfile]
+- Build Docker image for our react todo list application.
+  - ```sh
+    docker build -t us.gcr.io/$GCP_PROJECT_ID/react-todolist-app .
+    ```
+- Push the image to GCR
+  - ```sh
+    docker push us.gcr.io/$GCP_PROJECT_ID/react-todolist-app
+    ```
+- ### Write Pulumi Scripts
+  - Create new Pulumi Project using JavaScript GCP Template
+    - ```sh
+      pulumi new gcp-javascript
+      ```
+  - Install ```@pulumi/kubernetes``` for k8s Object deployment
+    - ```sh
+      npm install @pulumi/kubernetes
+      ```
+  - Set pulumi configs for GCP
+    - ```sh
+      pulumi config set gcp:project $GCP_PROJECT_ID
+      pulumi config set gcp:zone us-central1-c
+      ```
+  - Require all dependencies and configs
+    - ```js
+      const pulumi = require("@pulumi/pulumi");
+      const gcp = require("@pulumi/gcp");
+      const k8s = require("@pulumi/kubernetes");
+      const gcpConfig = new pulumi.Config("gcp");
+      const zone = gcpConfig.require("location");
+      ```
 
-This repository contains my DevOps projects.
-<p>
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" height="36" width="36"/>
-<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/docker.gif" height="36" width="36" >
-<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/kubernetes.svg.png"  height="36" width="36" >
-<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/helm.gif"  height="36" width="36" />
-<img src="https://raw.githubusercontent.com/itsksaurabh/itsksaurabh/master/assets/terraform.gif" height="36" />
-<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/cicd.gif"  height="36" width="36" />
-<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/ghactions.png"  height="36" width="36" />
- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/226px-Jenkins_logo.svg.png?20120629215426" height="36" />
-</p>
+  - Write code for creating GKE Cluster
+    ```js
+    const cluster = new gcp.container.Cluster("my-cluster", {
+      name: "my-first-cluster",
+      location: zone,
+      initialNodeCount: 3,
+      minMasterVersion: "latest",
+      nodeConfig: {
+        machineType: "g1-small",
+        diskSizeGb: 32,
+      },
+    });
+    ```
+  - Write kubeconfig for connecting to the cluster
+    ```js
+    const kubeconfig = pulumi
+      .all([cluster.name, cluster.endpoint, cluster.masterAuth])
+      .apply(([name, endpoint, masterAuth]) => {
+        const context = `${gcp.config.project}_${gcp.config.zone}_${name}`;
+        return `apiVersion: v1
+    clusters:
+    - cluster:
+        certificate-authority-data: ${masterAuth.clusterCaCertificate}
+        server: https://${endpoint}
+      name: ${context}
+    contexts:
+    - context:
+        cluster: ${context}
+        user: ${context}
+      name: ${context}
+    current-context: ${context}
+    kind: Config
+    preferences: {}
+    users:
+    - name: ${context}
+      user:
+        exec:
+          apiVersion: client.authentication.k8s.io/v1beta1
+          command: gke-gcloud-auth-plugin
+          installHint: Install gke-gcloud-auth-plugin for use with kubectl by following
+            https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
+          provideClusterInfo: true`;
+      });
+    ```
+  - Write code for kubernetes provider configuration
+    ```js
+    const clusterProvider = new k8s.Provider("hello", {
+      kubeconfig: kubeconfig,
+    });
+    ```
+  - Write code for kubernetes Deployment
+    ```js
+    const reactAppLabels = {
+      app: "react-app-todo-list",
+    };
+
+    const deployment = new k8s.apps.v1.Deployment(
+      "my-deployment",
+      {
+        metadata: {
+          name: "my-deployment",
+        },
+        spec: {
+          replicas: 1,
+          selector: {
+            matchLabels: reactAppLabels,
+          },
+          template: {
+            metadata: {
+              labels: reactAppLabels,
+            },
+            spec: {
+              containers: [
+                {
+                  name: "my-container",
+                  image: "us.gcr.io/$GCP_PROJECT_ID/react-todolist-app",
+                  ports: [
+                    {
+                      containerPort: 80,
+                    },
+                  ],
+                },
+              ],
+            },
+          },
+        },
+      },
+      { provider: clusterProvider }
+    );
+    ```
+
+  - Write code for Load Balancer service
+    ```js
+    const service = new k8s.core.v1.Service(
+      "my-service",
+      {
+        metadata: {
+          name: "react-todo-list-app-lb-service"
+        },
+        spec:{
+          type: "LoadBalancer",
+          ports: [{
+            port: 80,
+            targetPort: 80
+          }],
+          selector: reactAppLabels
+        }
+      },
+      { provider: clusterProvider }
+    );
+    ```
+  - Export required values as output
+    ```js
+    exports.clusterIP = cluster.endpoint;
+    exports.servicePublicIP = service.status.apply(s => s.loadBalancer.ingress[0].ip)
+    ```
 
 
->Every branch of this repo contains each DevOps project.
-
-<table>
-<tr>
-<th>No.</th>
-<th>Project</th>
-<th>Technologies Used</th>
-<th>Description</th>
-<th>Youtube Video</th>
-</tr>
-<tr>
-<td>1</td>
-<td>
-<a href="https://github.com/kubekode/DevOps-Projects/tree/Complete-CI/CD-with-Terraform-AWS">
-Complete CI/CD with Terraform and AWS
-</a>
-</td>
-<td>Terraform, Github Actions, Docker, AWS</td>
-<td>Deploying example app to aws ec2 using docker, github actions, terraform, AWS ECR</td>
-<td>
-<a href="https://www.youtube.com/watch?v=5sZAx2ylsOo&t=520s">Checkout video</a>
-</td>
-</tr>
-<tr>
-<td>2</td>
-<td>
-<a href="https://github.com/kubekode/DevOps-Projects/tree/Deploy-nodeapp-to-GKE">
-Deploy application to GKE
-</a>
-</td>
-<td>Node.js, Docker, Kubernetes, GCR, GKE</td>
-<td>Deploying example app to GKE with load balancer service.</td>
-<td>
-<a href="https://www.youtube.com/watch?v=w9GjyDafguI&t=382s">Checkout video</a>
-</td>
-</tr>
-<tr>
-<td>3</td>
-<td>
-<a href="https://github.com/kubekode/DevOps-Projects/tree/Complete-CI/CD-with-Terraform-GKE">
-Complete CI/CD with Terraform and Kubernetes
-</a>
-</td>
-<td>Node.js, Docker, Kubernetes, GCR, GKE, Terraform, GitHub Actions</td>
-<td>Deploying example app to GKE with load balancer service with CI/CD and Terraform.</td>
-<td>
-<a href="https://www.youtube.com/watch?v=u59WdYrkiJI&t=139s">Checkout video</a>
-</td>
-</tr>
-<tr>
-<td>4</td>
-<td>
-<a href="https://github.com/kubekode/DevOps-Projects/tree/Docker-compose-CI/CD-AWS-Beanstalk">
-Complete CI/CD with AWS Elastic Beanstalk
-</a>
-</td>
-<td>Reactjs, Docker, Docker compose, AWS Elastic Beanstalk, GitHub Actions</td>
-<td>Deploying React app to AWS Elastic Beanstalk CI/CD and Docker compose.</td>
-<td>
-<a href="https://www.youtube.com/watch?v=spA3jJYi6Q4">Checkout video</a>
-</td>
-</tr>
-</table>
-
-<hr>
-
-# Maintainer 😎
-
-[Tushar Rajpoot](https://tusharrajpoot.com)
-
-<a href="https://www.github.com/tush-tr" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" /></a> <a href="https://tusharrajpoot.hashnode.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/hashnode.svg" width="32" height="32" /></a> <a href="http://www.medium.com/@tush-tr" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/medium.svg" width="32" height="32" /></a> <a href="https://www.twitter.com/tush_tr604" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter.svg" width="32" height="32" /></a><a href="https://linkedin.com/in/tushar-r-849510116" target="_blank" rel="noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="32" height="32" /></a> <a href="https://www.youtube.com/c/UCSL_wYi9WB-uPz2_OzKb7bg" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/youtube.svg" width="32" height="32" /></a>
-
-## License
-
-[Apache License 2.0](LICENSE) © Tushar Rajpoot

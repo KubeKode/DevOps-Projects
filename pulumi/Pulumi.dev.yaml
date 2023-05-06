@@ -1,0 +1,4 @@
+encryptionsalt: v1:64R55uGc1ns=:v1:uGD7aBQo3gxkNrMM:br7Px+oOkZ0LA+gE23ON/XX2F2ts2g==
+config:
+  gcp:zone: us-central1-c
+  gcp:project: "<PROJECT_ID>"

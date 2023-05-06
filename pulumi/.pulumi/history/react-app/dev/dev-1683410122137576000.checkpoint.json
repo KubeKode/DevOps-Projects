@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/react-app/dev",
+        "latest": {
+            "manifest": {
+                "time": "2023-05-07T03:25:22.133816+05:30",
+                "magic": "973d6b3c240d147e1ef1ba406681becc939df85692d48ea02e3a54da48424358",
+                "version": "v3.66.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:64R55uGc1ns=:v1:uGD7aBQo3gxkNrMM:br7Px+oOkZ0LA+gE23ON/XX2F2ts2g=="
+                }
+            }
+        }
+    }
+}

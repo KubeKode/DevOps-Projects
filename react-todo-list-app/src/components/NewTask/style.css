@@ -1,0 +1,35 @@
+.new-task-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-wrapper {
+  background-color: aliceblue;
+  box-shadow: inset 0px 0px 6px 0px;
+  border-radius: 12px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  gap: 1;
+}
+.form-wrapper button {
+  margin-left: auto;
+}
+
+.form-wrapper input:focus {
+  outline: none;
+}
+.form-wrapper input {
+  box-shadow: 0px 0px 6px 0px;
+  border-radius: 5px;
+  margin: 0 5px;
+  border: none;
+  padding-right: 5px;
+  padding-left: 0.875rem;
+  line-height: 147.6%;
+  padding-top: 0.825rem;
+  padding-bottom: 0.5rem;
+}
