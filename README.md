@@ -79,6 +79,19 @@ Complete CI/CD with AWS Elastic Beanstalk
 <a href="https://www.youtube.com/watch?v=spA3jJYi6Q4">Checkout video</a>
 </td>
 </tr>
+<tr>
+<td>5</td>
+<td>
+<a href="https://github.com/KubeKode/DevOps-Projects/tree/React-GKE-pulumi">
+Deploy React app to GKE using Pulumi
+</a>
+</td>
+<td>Reactjs, Docker, Kubernetes, Google Cloud, JavaScript, Pulumi</td>
+<td>Deploying React app to Kubernetes on GKE using Pulumi IAC.</td>
+<td>
+<a href="https://www.youtube.com/watch?v=IbA5JnnFGAI">Checkout video</a>
+</td>
+</tr>
 </table>
 
 <hr>
